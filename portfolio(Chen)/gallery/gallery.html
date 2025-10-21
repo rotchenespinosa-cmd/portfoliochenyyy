@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gallery</title>
+    <style>
+        body {
+    font-family: "Franklin Gothic Medium", "Arial Narrow", "Arial", sans-serif;
+    background-image: url(bg.gif);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+}
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(2, 200px);
+    gap: 10px;
+
+}
+.image-gallery {
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+.image-gallery:hover {
+    transform: scale(1.1);
+}
+#box {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    backdrop-filter: blur(5px);
+}
+#box.hidden {
+    display: none;
+}
+#box-img {
+    max-width: 50%;
+    max-height: 50%;
+}
+#close-btn {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    font-size: 30px;
+    cursor: pointer;
+}
+    </style>
+</head>
+<body> 
+    <div class="gallery">
+        <img src="cat1.gif" alt="" class="image-gallery">
+        <img src="cat2.gif" alt="" class="image-gallery">
+        <img src="cat3.gif" alt="" class="image-gallery">
+        <img src="cat4.webp" alt="" class="image-gallery">
+    </div>
+    <div id="box" class="hidden">
+        <span id="close-btn">&times; </span>
+        <img src="" id="box-img" alt="">
+    </div>
+    
+    <script>
+        document.addEventListener("DOMContentLoaded", function(){
+    
+    const galleryImg = document.querySelectorAll('.image-gallery');
+    const LightBox = document.getElementById('box');
+    const boxImg = document.getElementById('box-img');
+    const closeBtn = document.getElementById('close-btn');
+    
+    galleryImg.forEach(item => {
+        item.addEventListener('click', function() {
+            boxImg.src = item.src;
+            LightBox.classList.remove('hidden');
+
+        });
+        LightBox.addEventListener('click', function(event){
+            if(event.target !== boxImg && event.target !== closeBtn){
+                LightBox.classList.add('hidden');
+            }
+        });
+    });
+});
+    </script>
+</body>
+</html>

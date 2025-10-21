@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dark Mode Toggle</title>
+  <style>
+    body {
+      background-color: rgb(238, 28, 213);
+      color: blue;
+      font-family: Arial, sans-serif;
+      padding: 20px;
+      transition: background-color 0.3s, color 0.3s;
+    }
+
+    h1 {
+      margin-bottom: 10px;
+    }
+
+    .section {
+      text-align: center;
+    }
+
+    .image-container {
+      margin-top: 20px;
+    }
+
+    .image-container img {
+      width: 300px;
+      height: 300px;
+      border: 2px solid black;
+      border-radius: 10px;
+      transition: filter 0.5s, border-color 0.3s;
+      object-fit: cover;
+    }
+
+    /* Dark Mode */
+    .dark-mode {
+      background-color: #121212;
+      color: #f0f0f0;
+    }
+
+    .dark-mode .image-container img {
+      filter: grayscale(100%);
+      border-color: #f0f0f0;
+    }
+
+    button {
+      margin-top: 20px;
+      padding: 10px 15px;
+      font-size: 16px;
+      cursor: pointer;
+      border: none;
+      background-color: blue;
+      color: white;
+      border-radius: 8px;
+      transition: background-color 0.3s;
+    }
+
+    button:hover {
+      background-color: darkblue;
+    }
+  </style>
+</head>
+<body>
+  <section class="section">
+    <h1 style="color: white;">Rotchen</h1>
+    <p style="color: white;">Light and Dark Mode Toggle Example</p>
+    <div class="image-container">
+      <img id="modeImage" src="images/rg.jpg" alt="Mode Image" onerror="this.src='https://via.placeholder.com/300?text=Image+Not+Found'">
+    </div>
+    <button id="toggleButton" onclick="toggleDarkMode()">Toggle Dark Mode</button>
+  </section>
+
+  <script>
+    function toggleDarkMode() {
+      const body = document.body;
+      const button = document.getElementById("toggleButton");
+      
+      // Toggle the dark mode class
+      body.classList.toggle("dark-mode");
+      
+      // Change button text depending on mode
+      if (body.classList.contains("dark-mode")) {
+        button.textContent = "Toggle Light Mode";
+      } else {
+        button.textContent = "Toggle Dark Mode";
+      }
+    }
+  </script>
+</body>
+</html>

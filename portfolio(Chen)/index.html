@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Responsive Portfolio</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="animate.css" />
+
+
+  <link rel="stylesheet" href="css/style.css" />
+  
+ 
+</head>
+<body>
+
+  <div id="particles-js"></div>
+
+
+ <header>
+  <nav>
+    <div class="logo">❤️Girl</div>
+    <div class="menu-toggle" id="menu-toggle">
+      <i class="fa fa-bars"></i>
+    </div>
+    <ul id="nav-links">
+      <li><a href="#">Home</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#education">Education</a></li>
+      <li><a href="#activity">Activity</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+</header>
+
+  <main>
+    <!-- HOME -->
+    <section class="hero" id="home">
+      <div class="hero-content">
+        <h1>Hello,<br> I'm <span>Rotchen Girl Espinosa</span></h1>
+
+
+        <div class="typing" id="typing"></div>
+        
+      </div>
+      <div class="hero-img">
+        <img src="images/espinosa.png" alt="Hero Character">
+      </div>
+    </section>
+
+    <!-- ==== ABOUT SECTION ==== -->
+<section id="about" class="section">
+  <div class="about-container">
+
+    <div class="img-about">
+      <div class="overlay"></div>
+      <div class="img" style="background-image: url('images/rg.jpg');"></div>
+    </div>
+
+
+    <div class="about-content">
+      <h2 class="section-title">About Me</h2>
+      <h3 class="name">I'm Rotchen Girl Espinosa</h3>
+      <h4 class="role" style="color: white;">Web Developer</h4>
+      <p class="description">
+        I'm a Diploma In Information Technology Student.<br>
+        I’m a Fullstack Web Development certified student and currently learning Flutter Mobile App Development.
+      </p>
+
+ 
+      <div class="info-wrapper">
+        <ul class="about-info">
+          <li><span>Name:</span>Rotchen Girl Espinosa</li>
+          <li><span>Date of Birth:</span>September 15, 2005</li>
+          <li><span>Address:</span>Sarangani Province</li>
+          <li><span>Email:</span> rotchenespinosa@gmail.com</li>
+          <li><span>Phone:</span> 09515316642</li>
+        </ul>
+      </div>
+
+      <a href="images/resume.png" target="_blank" class="btn">Resume</a>
+    </div>
+  </div>
+</section>
+
+
+    <!-- ===== EDUCATION SECTION ===== -->
+<section id="education" class="section">
+  <div class="container">
+    <div class="section-header">
+      <h2><i class="fas fa-graduation-cap"></i> My Education</h2>
+      <p style="color:white;">Education is the most powerful weapon which you can use to change the world.</p>
+    </div>
+
+    <div class="education-box">
+      <div class="edu-card">
+        <div class="edu-img" style="background-image: url('images/rg.jpg');"></div>
+        <div class="edu-content">
+          <h3>Diploma in Information Technology</h3>
+          <h4>Davao Del Sur State College</h4>
+          <span class="edu-year">2022 - 2026</span>
+        </div>
+      </div>
+
+	  <div class="edu-card">
+        <div class="edu-img" style="background-image: url('images/esp.jpg');"></div>
+        <div class="edu-content">
+          <h3>Banate National High School</h3>
+          <h4>Sarangani Province </h4>
+          <span class="edu-year">2018-2022</span>
+        </div>
+      </div>
+
+      <div class="edu-card">
+        <div class="edu-img" style="background-image: url('images/girl.jpg');"></div>
+        <div class="edu-content">
+          <h3>Banate Elementary School</h3>
+          <h4>Sarangani Province </h4>
+          <span class="edu-year">2011-2017</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+<!-- ===== ACTIVITY SECTION ===== -->
+<section id="activity" class="section">
+  <div class="container">
+    <div class="section-header">
+      <h2>Our Activities</h2>
+    </div>
+
+    <div class="activity-grid">
+
+      <div class="activity-card" onclick="openActivity('profile/index.html')">
+        <div class="activity-img" style="background-image: url('images/profile.jpg');"></div>
+        <div class="activity-label">Profile</div>
+      </div>
+
+
+      <div class="activity-card" onclick="openActivity('hide/index.html')">
+        <div class="activity-img" style="background-image: url('images/esp-profile.png');"></div>
+        <div class="activity-label">Hide & Show</div>
+      </div>
+
+
+      <div class="activity-card" onclick="openActivity('darkmode/index.html')">
+        <div class="activity-img" style="background-image: url('images/cld.png');"></div>
+        <div class="activity-label">Toggle Mode</div>
+      </div>
+
+
+      <div class="activity-card hidden-card" onclick="openActivity('app/app.html')">
+        <div class="activity-img" style="background-image: url('images/list.png');"></div>
+        <div class="activity-label">To Do List</div>
+      </div>
+
+
+
+      <div class="activity-card hidden-card" onclick="openActivity('gallery/gallery.html')">
+        <div class="activity-img" style="background-image: url('images/gallery.png');"></div>
+        <div class="activity-label">Gallery</div>
+      </div>
+    </div>
+      
+
+    <div class="view-all-container">
+      <button class="view-all-btn" id="viewAllBtn">View All</button>
+    </div>
+  </div>
+</section>
+
+
+<!-- ===== SKILLS & ABILITIES SECTION ===== -->
+<section id="skills" class="section">
+  <div class="container">
+    <div class="section-header">
+      <h2><i class="fas fa-laptop-code"></i> Skills & Abilities</h2>
+    </div>
+
+    <div class="skills-grid">
+
+      <div class="skill-card">
+        <img src="images/react.png" alt="ReactJS">
+        <p>ReactJS</p>
+      </div>
+      <div class="skill-card">
+        <img src="images/express.png" alt="ExpressJS">
+        <p>ExpressJS</p>
+      </div>
+      <div class="skill-card">
+        <img src="images/node.png" alt="NodeJS">
+        <p>NodeJS</p>
+      </div>
+      
+      <div class="skill-card">
+        <img src="images/firebase.png" alt="Firebase">
+        <p>Firebase</p>
+      </div>
+      <div class="skill-card">
+        <img src="images/android.png" alt="Android">
+        <p>Android</p>
+      </div>
+
+
+      <div class="skill-card">
+        <img src="images/bootstrap.png" alt="Bootstrap">
+        <p>Bootstrap</p>
+      </div>
+      
+      <div class="skill-card">
+        <img src="images/html5.png" alt="HTML5">
+        <p>HTML5</p>
+      </div>
+
+      <div class="skill-card">
+        <img src="images/css3.png" alt="CSS3">
+        <p>CSS3</p>
+      </div>
+      <div class="skill-card">
+        <img src="images/js.png" alt="JavaScript">
+        <p>JavaScript</p>
+      </div>
+      <div class="skill-card">
+        <img src="images/java.png" alt="Java">
+        <p>Java</p>
+      </div>
+      <div class="skill-card">
+        <img src="images/php.png" alt="PHP">
+        <p>PHP</p>
+      </div>
+      <div class="skill-card">
+        <img src="images/python.png" alt="Python">
+        <p>Python</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+    <!-- CONTACT SECTION -->
+<section id="contact" class="section">
+  <div class="container">
+    <h2 class="contact-title">
+      <i class="fa fa-headphones"></i> Contact <span>Us</span>
+    </h2>
+
+    <div class="contact-container">
+
+      <div class="contact-image">
+        <img src="images/cat.webp" alt="Contact Illustration">
+      </div>
+
+
+      <form action="send_mail.php" method="POST" class="contact-form">
+        <div class="form-group">
+          <i class="fa fa-user"></i>
+          <input type="text" name="name" placeholder="Name" required>
+        </div>
+
+        <div class="form-group">
+          <i class="fa fa-envelope"></i>
+          <input type="email" name="email" placeholder="Email" required>
+        </div>
+
+        <div class="form-group">
+          <i class="fa fa-phone"></i>
+          <input type="text" name="mobile" placeholder="Mobile" required>
+        </div>
+
+        <div class="form-group textarea">
+          <i class="fa fa-comment-dots"></i>
+          <textarea name="message" placeholder="Message" required></textarea>
+        </div>
+
+        <button type="submit" class="submit-btn">
+          <i class="fa fa-paper-plane"></i> Submit
+        </button>
+      </form>
+    </div>
+  </div>
+</section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="ftco-footer">
+    <div class="container text-center">
+      <ul class="ftco-footer-social list-unstyled">
+        <li><a href="#"><span class="icon-twitter fab fa-twitter"></span></a></li>
+        <li><a href="https://www.facebook.com/PjChen19"><span class="icon-facebook fab fa-facebook-f"></span></a></li>
+        <li><a href="https://myaccount.google.com/?utm_source=OGB&utm_medium=app"><span class="icon-linkedin fab fa-linkedin-in"></span></a></li>
+        <li><a href="https://github.com/princessjanebaladiang-ops"><span class="icon-github fab fa-github"></span></a></li>
+      </ul>
+      <p>© 2025 Rotchen Girl Espinosa. All Rights Reserved.</p>
+    </div>
+  </footer>
+
+
+  <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+
+   <script src="https://kit.fontawesome.com/a2e0f1f5ef.js" crossorigin="anonymous"></script>
+  <script src="script/javascript.js"></script>
+
+
+
+</body>
+</html>
+
+<canvas id="neon-cursor"></canvas>

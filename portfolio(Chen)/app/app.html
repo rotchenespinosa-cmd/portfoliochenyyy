@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To Do List App</title>
+    <style>
+        body{
+    font-family: 'Times New Roman', Times, serif;
+    background-image: url(bg.gif);
+    background-size: cover;
+    background-repeat: no-repeat;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+.container{
+    backdrop-filter: blur(5px);
+    background-color: rgba(17, 25, 40, 0.75);
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 4px 9px rgb(0, 0, 0, 0.1);
+    text-align: center;
+}
+h1{
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+input[type="text"]{
+    width: calc(100% - 22px);
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 16px;
+}
+button{
+    background-color: rgb(0, 162, 255);
+    color: ghostwhite;
+    bottom: none;
+    padding: 10px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    margin: 0;
+}
+ul{
+    list-style-type: none;
+    padding: 0;
+}
+li {
+    display: flex; 
+    justify-content: space-between; 
+    align-items: center; 
+    margin-bottom: 10px; 
+    background-color: rgb(48, 220, 13);
+    padding: 10px;
+    border-left: 5px;
+}
+li.completed{
+    text-decoration: none;
+    border-left: 5px;
+    background-color: rgb(4, 0, 255);
+}
+li.button{
+    background-color: rgb(255, 94, 0);
+    color: gray;
+    border: none;
+}
+    </style>
+</head>
+<body>
+     <div class="container">
+        <h1>To Do List App</h1>
+        <input type="text" id="task-input" placeholder="Enter New Task">
+        <button id="task-btn">Add Task</button>
+        <ul id="task-list"></ul>
+     </div>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+    const taskInput = document.getElementById("task-input");
+    const addTaskbtn = document.getElementById("task-btn");
+    const tasklist = document.getElementById("task-list");
+
+    function addTask() {
+        const taskText = taskInput.value.trim();
+        if (taskText !== "") { 
+            const listItem = document.createElement('li');
+            listItem.textContent = taskText;
+
+            const completeBtn = document.createElement('button'); 
+            completeBtn.textContent = 'Complete'; 
+            completeBtn.addEventListener('click', function() {
+                listItem.classList.toggle('completed'); 
+            });
+
+            const deleteBtn = document.createElement('button');
+            deleteBtn.textContent = 'Delete';
+            deleteBtn.addEventListener('click', function() {
+                tasklist.removeChild(listItem);
+            });
+
+            listItem.appendChild(completeBtn); 
+            listItem.appendChild(deleteBtn);
+            tasklist.appendChild(listItem);
+
+            taskInput.value = ""; 
+        }
+    }
+
+    addTaskbtn.addEventListener('click', addTask);
+    taskInput.addEventListener('keypress', function(event) {
+        if (event.key === 'Enter') {
+            addTask();
+        }
+    });
+});
+    </script>
+</body>
+</html>
